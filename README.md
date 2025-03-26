@@ -7,6 +7,12 @@ Considering the current state of the endpoint to be refactored, I was guided by 
   - If in some case, the clients enforce strict schema matching, then this resource would represent a breaking change and its introduction would be beyond the scope of this task.
 - `Fig\Http\Message\StatusCodeInterface` is used as centralized source for the response status codes, considering that it's already used as source of common HTTP status codes in the framework
 
+#### API Request Examples:
+1. `GET /has_permission?permission=read` → Will check for `read` permission.
+2. `GET /has_permission?permission=write` → Will check for `write` permission.
+3. `GET /has_permission` (no query param) → Defaults to `read` permission.
+4. `GET /has_permission?permission=delete` → Returns `400 Bad Request`.
+
 
 # ❗ Please do not fork this repository ❗
 
